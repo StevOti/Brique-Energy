@@ -1,2 +1,7 @@
-[start]
-cmd = "gunicorn store.wsgi --bind 0.0.0.0:$PORT"
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "gunicorn brique.wsgi"
+healthcheckPath = "/"
+healthcheckTimeout = 100
