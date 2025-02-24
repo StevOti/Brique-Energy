@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">Brique<sub  class="navbar-brand" style="color: orange;">Energy</sub></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+  
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'category' 'Shisha-Coal' %}">Shisha coal</a>
+            <a class="dropdown-item" href="{% url 'category' 'Briquettes' %}">Briquettes</a>
+            <a class="dropdown-item" href="{% url 'category' 'Biochar' %}">Biochar</a>
+            <a class="dropdown-item" href="{% url 'category_summary' %}">Category Summary</a>
+            <a class="dropdown-item" href="{% url 'search' %}">Search</a>
+          </div>
+        </li>
+        {% if user.is_superuser %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Orders.</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shipped_dash' %}">Shipped Orders</a>
+            <a class="dropdown-item" href="{% url 'not_shipped_dash' %}">Unshipped Orders</a>
+          </div>
+        </li>
+        {% endif %}
+          <li class="nav-item active"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+  
+          {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="{% url 'update_user' %}">User Profile</a>
+              <a class="dropdown-item" href="{% url 'update_info' %}">User Information</a>
+              
+            </div>
+          </li>
+        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+        {% else %}
+        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Sign In</a></li>
+        <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Sign Up</a></li>
+       {% endif %}
+          <li class="nav-item cta cta-colored"><a href="{% url 'cart_summary' %}" class="nav-link"><span class="icon-shopping_cart" id="cart_quantity"></span>[{{ cart|length }}]</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->

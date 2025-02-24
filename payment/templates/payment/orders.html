@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Shipped | Brique Energy Limited{% endblock %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<section class="ftco-section testimony-section">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Order: {{ order.id }} - Ksh {{ order.amount_paid }}
+             </div>
+            <div class="card-body">
+              <p>Email: {{ order.email }}</p>
+              {% if order.date_shipped %}
+                <p>Date Shipped: {{ order.date_shipped }}</p>
+              {% else %}
+                <p>Date Ordered: {{ order.date_ordered }}</p>
+              {% endif %}
+              <p>Full Name: {{ order.full_name }}</p>
+              <p>Shipping Address: {{ order.shipping_address }}</p>
+
+              {% for item in items %}
+                <p>Item: {{ item.product }} - {{ item.quantity }} - Ksh {{ item.price }} </p>
+
+              {% endfor %}
+
+              {% if not order.shipped %}
+              <form action="" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="shipping_status" value="true">
+                <p><button href="#" class="btn btn-black py-3 px-5" type="submit">Mark As Shipped</button></p>
+              </form>
+              {% else %}
+              <form action="" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="shipping_status" value="false">
+                <p><button href="#" class="btn btn-black py-3 px-5" type="submit">Mark As Not Shipped</button></p>
+              </form>
+              {% endif %}
+            </div>
+          </div>
+    </div>
+</section>
+{% endblock %}
