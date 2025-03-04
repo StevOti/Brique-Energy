@@ -1,1 +1,2 @@
-web: python manage.py migrate && gunicorn brique.wsgi --bind 0.0.0.0:8080
+web: gunicorn store.wsgi --log-file
+web: python manage.py migrate && gunicorn store.wsg

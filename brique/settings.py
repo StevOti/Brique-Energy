@@ -30,11 +30,9 @@ SECRET_KEY = 'django-insecure-juo)ihc=7q=$5^iyfv70axlw@1=upkkpu(sx#j1+0lvq3lvd0_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['brique-energy-54s02w1h3-stevotis-projects.vercel.app', 'https://brique-energy-54s02w1h3-stevotis-projects.vercel.app/']
-# CSRF_TRUSTED_ORIGINS = ['https://brique-energy-54s02w1h3-stevotis-projects.vercel.app']
+ALLOWED_HOSTS = ['www.briquenergy.com', 'https://www.briquenergy.com/']
+CSRF_TRUSTED_ORIGINS = ['https://www.briquenergy.com/']
 
-ALLOWED_HOSTS = ['.vercel.app']
-CSRF_TRUSTED_ORIGINS = ['*']
 
 
 # Application definition
