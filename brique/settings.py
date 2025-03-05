@@ -33,6 +33,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['www.briquenergy.com', 'https://www.briquenergy.com/']
 CSRF_TRUSTED_ORIGINS = ['https://www.briquenergy.com/']
 
+PORT = os.getenv("PORT", "8000")
+
 
 
 # Application definition
