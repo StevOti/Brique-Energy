@@ -35,7 +35,11 @@ DEBUG = True
 
 # PORT = os.getenv("PORT", "8000")
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '*',
+    'www.briquenergy.com',
+    'https://www.briquenergy.com/',
+    ]
 
 
 
