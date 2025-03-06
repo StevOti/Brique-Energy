@@ -36,9 +36,9 @@ DEBUG = True
 # PORT = os.getenv("PORT", "8000")
 
 ALLOWED_HOSTS = [
-    '*',
     'www.briquenergy.com',
     'https://www.briquenergy.com/',
+    'brique-energy-production.up.railway.app'
     ]
 
 
