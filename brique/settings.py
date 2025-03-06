@@ -31,14 +31,16 @@ SECRET_KEY = 'django-insecure-juo)ihc=7q=$5^iyfv70axlw@1=upkkpu(sx#j1+0lvq3lvd0_
 DEBUG = True
 
 # ALLOWED_HOSTS = ['www.briquenergy.com', 'https://www.briquenergy.com/']
-CSRF_TRUSTED_ORIGINS = ['https://brique-energy-production.up.railway.app/']
+# CSRF_TRUSTED_ORIGINS = ['https://www.briquenergy.com/']
 
 # PORT = os.getenv("PORT", "8000")
 
 ALLOWED_HOSTS = [
-    'https://brique-energy-production.up.railway.app/',
-    'brique-energy-production.up.railway.app'
-]
+    '*',
+    'www.briquenergy.com',
+    'https://www.briquenergy.com/',
+    ]
+
 
 
 # Application definition
