@@ -30,10 +30,10 @@ SECRET_KEY = 'django-insecure-juo)ihc=7q=$5^iyfv70axlw@1=upkkpu(sx#j1+0lvq3lvd0_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['briquenergy.com', 'https://www.briquenergy.com/']
-CSRF_TRUSTED_ORIGINS = ['https://www.briquenergy.com/']
+ALLOWED_HOSTS = ['briquenergy.com', 'www.briquenergy.com', 'brique-energy-production.up.railway.app', '*']
+CSRF_TRUSTED_ORIGINS = ['https://briquenergy.com', 'https://www.briquenergy.com', 'https://brique-energy-production.up.railway.app']
 
-# PORT = os.getenv("PORT", "8000")
+PORT = os.getenv("PORT", "8000")
 
 
 
