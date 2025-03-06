@@ -39,7 +39,7 @@ ALLOWED_HOSTS = [
     'www.briquenergy.com',
     'https://www.briquenergy.com/',
     'brique-energy-production.up.railway.app'
-    ]
+]
 
 
 
